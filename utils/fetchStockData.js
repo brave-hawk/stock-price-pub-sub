@@ -22,23 +22,27 @@
  * THE SOFTWARE.
  */
 
-//const axios = require("axios");
+
 import axios from 'axios';
+import * as dotenv from 'dotenv';
+
+dotenv.config();
+
 async function fetchStockPrice(symbol) {
+  const options = {
+    method: 'GET',
+    url: `https://nairobi-stock-exchange-nse.p.rapidapi.com/stocks/${symbol}`,
+    headers: {
+      'x-rapidapi-key': process.env.RAPID_API_KEY,
+      'x-rapidapi-host': process.env.RAPID_API_HOST
+    }
+  };
   try {
-    const response = await axios.get(`https://www.alphavantage.co/query`, {
-      params: {
-        function: "TIME_SERIES_INTRADAY",
-        symbol: symbol,
-        interval: "60min",
-        apikey: process.env.ALPHA_VANTAGE_API_KEY,
-      },
-    });
-    return response.data;
+    const response = await axios.request(options);
+    return(response.data[0]);
   } catch (error) {
-    console.error("Error fetching stock price:", error);
-    throw error;
+    console.error(error);
   }
 }
 
-module.exports = fetchStockPrice;
+export default fetchStockPrice;
