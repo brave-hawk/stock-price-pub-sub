@@ -1,4 +1,5 @@
 .env
+.sfdx
 node_modules
 private.key
 server.cert
