@@ -67,6 +67,7 @@ async function fetchSingle() {
         };
         const publishResult = await client.publish('/event/HourlyStockEvent__e', payload);
         console.log('Published event: ', JSON.stringify(publishResult));   
+        client.close();
         
     } catch (error) {
         console.error(error);
@@ -90,6 +91,7 @@ async function fetchAll() {
         };
         const publishResult = await client.publish('/event/HourlyStockEvent__e', payload);
         console.log('Published event: ', JSON.stringify(publishResult));   
+        client.close();
         
     } catch (error) {
         console.error(error);
