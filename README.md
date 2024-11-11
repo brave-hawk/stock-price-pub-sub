@@ -126,6 +126,10 @@ The application includes basic error handling for:
 - `axios`: HTTP client for API requests
 - `dotenv`: Environment variable management
 
+## Thanks
+
+Thanks to [@iancenry](https://github.com/iancenry) for providing the free API
+
 ## License
 
 This project is licensed under the terms of the [MIT License](./LICENSE)
