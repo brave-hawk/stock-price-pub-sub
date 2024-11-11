@@ -128,7 +128,8 @@ The application includes basic error handling for:
 
 ## Thanks
 
-Thanks to [@iancenry](https://github.com/iancenry) for providing the free API
+Thanks to [@iancenry](https://github.com/iancenry) for providing the free Nairobi Stock Exchange API on RapidAPI
+Thanks to [@pozil] (https://github.com/pozil) for the  pub-sub-api-node-client API
 
 ## License
 
